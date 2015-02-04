@@ -69,7 +69,7 @@ describe('unit tests', function () {
       sandbox.stub(hyperquest, 'post').withArgs(uri).returns(req);
       var foam = require('../foam');
       foam(uri, operation, action, message, {namespace: namespace}, noop);
-      spyEnd.should.have.been.calledWith('<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" ><env:Body><CelsiusToFahrenheit xmlns="http://www.w3schools.com/webservices/"><Celsius>28</Celsius></CelsiusToFahrenheit></env:Body></env:Envelope>');
+      spyEnd.should.have.been.calledWith('<?xml version="1.0" encoding="UTF-8"?><s12:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s12="http://www.w3.org/2003/05/soap-envelope"><s12:Body><ns1:CelsiusToFahrenheit xmlns:ns1="http://www.w3schools.com/webservices/"><Celsius>28</Celsius></ns1:CelsiusToFahrenheit></s12:Body></s12:Envelope>');
     });
 
     it('listens on request\'s response events', function () {

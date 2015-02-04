@@ -80,7 +80,7 @@ function namespaces (ns) {
 }
 
 function serializeOperation (operation, options) {
-  return '<ns:1' + operation + (options.namespace ? ' xmlns:ns1="' + options.namespace + '"' : '') + '>';
+  return '<ns1:' + operation + (options.namespace ? ' xmlns:ns1="' + options.namespace + '"' : '') + '>';
 }
 
 function gunzip (callback) {
